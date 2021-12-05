@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 function Tabla(props) {
   return (
     <table className="table">
@@ -5,15 +6,15 @@ function Tabla(props) {
         <tr>
           <th scope="col">#</th>
           <th scope="col">ID</th>
-          <th scope="col">Device</th>
-          <th scope="col">Value</th>
+          <th scope="col"><FormattedMessage id ="Device"/></th>
+          <th scope="col"><FormattedMessage id ="Value"/></th>
         </tr>
       </thead>
       <tbody>
-      {props.rooms.devices.map((d) => {
+      {props.device.devices.map((d, i) => {
         return(
-            <tr>
-                <th scope="row">1</th>
+            <tr key={d.id}>
+                <th scope="row">{i+1}</th>
                 <td>{d.id}</td>
                 <td>{d.name}</td>
                 <td>{d.desired.value}</td>
