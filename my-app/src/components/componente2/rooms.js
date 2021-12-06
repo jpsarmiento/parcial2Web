@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import RoomCard from "./roomCard/roomCard";
 import Tabla from "../componente1/espacioCard/tabla";
+import Pie from "./pie"
 import { FormattedMessage } from "react-intl";
 
 function Rooms(props) {
@@ -54,6 +55,7 @@ function Rooms(props) {
         ))}
       </div>
       {room != null ? <Tabla device={room} /> : null}
+      {rooms != null ? <Pie cuartos={rooms}/> : null}
     </div>
   );
 }
